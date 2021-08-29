@@ -15,7 +15,7 @@ const GameBoard = () => {
 
     setTimeout(() => {
       setCompFinger()
-    }, 1500)
+    }, 600)
   }
 
   function setCompFinger() {
