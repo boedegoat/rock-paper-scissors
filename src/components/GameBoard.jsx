@@ -7,7 +7,7 @@ import IconScissors from '../assets/images/icon-scissors.svg'
 
 const GameBoard = () => {
   return (
-    <div className='relative mt-20'>
+    <div className='relative'>
       <div className='transform scale-[0.6]'>
         <img src={Triangle} alt='triangle' />
       </div>

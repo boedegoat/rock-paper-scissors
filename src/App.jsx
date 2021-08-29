@@ -4,10 +4,12 @@ import GameBoard from './components/GameBoard'
 
 const App = () => {
   return (
-    <div className='bg-main min-h-screen text-white p-7'>
+    <div className='bg-main min-h-screen text-white p-7 flex flex-col justify-between items-center'>
       <Header />
       <GameBoard />
-      {/* rules button */}
+      <button className='uppercase tracking-wider py-2 px-10 border-2 rounded-md text-xs text-gray-300 border-gray-300'>
+        rules
+      </button>
     </div>
   )
 }

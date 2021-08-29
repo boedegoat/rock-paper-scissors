@@ -4,7 +4,7 @@ import Logo from '../assets/images/logo.svg'
 
 const Header = () => {
   return (
-    <header className='flex items-center justify-between rounded-md p-3 ring-2 ring-neutral-header'>
+    <header className='self-stretch flex items-center justify-between rounded-md p-3 ring-2 ring-neutral-header'>
       <div className='w-20 -mb-1'>
         <img src={Logo} alt='logo' />
       </div>
