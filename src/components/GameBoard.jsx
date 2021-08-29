@@ -84,7 +84,9 @@ const GameBoard = () => {
           ${result ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
           mt-10 px-10 text-center`}
           >
-            <h1 className='uppercase text-5xl'>you {result}</h1>
+            <h1 className='uppercase text-5xl'>
+              {result === 'draw' ? 'draw' : `you ${result}`}
+            </h1>
             <button
               className='uppercase bg-white text-neutral-dark w-full py-2 tracking-widest mt-4 rounded-md text-sm'
               onClick={resetGame}
