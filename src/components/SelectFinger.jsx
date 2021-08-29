@@ -1,12 +1,48 @@
 import React from 'react'
+import IconPaper from '../assets/images/icon-paper.svg'
+import IconRock from '../assets/images/icon-rock.svg'
+import IconScissors from '../assets/images/icon-scissors.svg'
 
-const SelectFinger = ({ Icon, alt, bg, position }) => {
+const SelectFinger = ({ finger, className, ...props }) => {
+  const Icon =
+    finger === 'paper'
+      ? IconPaper
+      : finger === 'rock'
+      ? IconRock
+      : finger === 'scissors'
+      ? IconScissors
+      : ''
+
+  const alt =
+    finger === 'paper'
+      ? 'icon paper'
+      : finger === 'rock'
+      ? 'icon rock'
+      : finger === 'scissors'
+      ? 'icon scissors'
+      : ''
+
+  const bg =
+    finger === 'paper'
+      ? 'bg-paper'
+      : finger === 'rock'
+      ? 'bg-rock'
+      : finger === 'scissors'
+      ? 'bg-scissors'
+      : 'bg-transparent'
+
   return (
-    <button className={`absolute p-3 rounded-full w-max shadow-md ${bg} ${position}`}>
-      <div className='bg-white p-3 rounded-full w-20 h-20 flex items-center justify-center border-t-4 border-gray-300'>
+    <div className={`p-3 rounded-full w-max ${bg} ${className}`} {...props}>
+      <div
+        className={`
+      ${finger ? 'bg-white' : 'bg-neutral-dark'}
+       p-3 rounded-full w-20 h-20 flex items-center 
+       ${finger && 'border-t-4 border-gray-300'}
+       justify-center`}
+      >
         <img src={Icon} alt={alt} className='w-10' />
       </div>
-    </button>
+    </div>
   )
 }
 
