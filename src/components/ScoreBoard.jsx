@@ -5,6 +5,8 @@ const ScoreBoard = () => {
   const [{ score, result }] = useGameContext()
   const [scoreEffect, setScoreEffect] = useState('')
 
+  console.log(result)
+
   useEffect(() => {
     if (!result) return
     switch (result) {
