@@ -3,6 +3,7 @@ import Triangle from '../assets/images/bg-triangle.svg'
 import SelectFinger from './SelectFinger'
 
 import { useGameContext } from '../store/GameProvider'
+import ResultDisplay from './ResultDisplay'
 
 const GameBoard = () => {
   const [{ userFinger, compFinger, result }, dispatch] = useGameContext()
@@ -91,33 +92,33 @@ const GameBoard = () => {
   return (
     <div className='w-full'>
       {/* finger display */}
-      <div className='flex justify-between'>
-        <div className='flex flex-col items-center'>
-          <SelectFinger finger={userFinger} />
-          <p className='uppercase text-sm tracking-wide mt-5'>you picked</p>
+      <div className='flex justify-between md:items-center md:justify-center md:space-x-52'>
+        <div className={`flex flex-col items-center ${result ? 'translate-x-20' : ''}`}>
+          <SelectFinger finger={userFinger} className='md:order-2 md:scale-[1.7]' />
+          <p className='uppercase text-sm whitespace-nowrap tracking-wide md:text-xl md:order-1 mt-5 md:mt-0 md:mb-20'>
+            you picked
+          </p>
         </div>
-        <div className='flex flex-col items-center'>
-          <SelectFinger finger={compFinger} />
-          <p className='uppercase text-sm tracking-wide mt-5'>the house picked</p>
+        <ResultDisplay
+          result={result}
+          resetGame={resetGame}
+          className={`hidden translate-y-10 ${result ? 'md:block' : ''}`}
+        />
+        <div className={`flex flex-col items-center ${result ? '-translate-x-20' : ''}`}>
+          <SelectFinger finger={compFinger} className='md:order-2 md:scale-[1.7]' />
+          <p className='uppercase whitespace-nowrap text-sm tracking-wide md:text-xl md:order-1 mt-5 md:mt-0 md:mb-20'>
+            the house picked
+          </p>
         </div>
       </div>
 
-      {/* result display */}
-      <div
-        className={`
-          ${result ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
-          mt-10 px-10 text-center`}
-      >
-        <h1 className='uppercase text-5xl'>
-          {result === 'draw' ? 'draw' : `you ${result}`}
-        </h1>
-        <button
-          className='uppercase bg-white text-neutral-dark w-full py-2 tracking-widest mt-4 rounded-md text-sm'
-          onClick={resetGame}
-        >
-          play again
-        </button>
-      </div>
+      <ResultDisplay
+        result={result}
+        resetGame={resetGame}
+        className={`mt-8 md:hidden ${
+          result ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      />
     </div>
   )
 }
