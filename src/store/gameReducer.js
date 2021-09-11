@@ -52,16 +52,30 @@ export function gameReducer(gameState, action) {
         result,
       }
 
-    case 'INCREMENT_SCORE':
+    case 'SET_SCORE_FROM_LOCALSTORAGE':
+      const score = parseInt(localStorage.getItem('score')) || 0
+      if (!score) localStorage.setItem('score', 0)
       return {
         ...gameState,
-        score: gameState.score + 1,
+        score,
       }
 
-    case 'DECREMENT_SCORE':
+    case 'INCREMENT_SCORE': {
+      const newScore = gameState.score + 1
+      localStorage.setItem('score', newScore)
       return {
         ...gameState,
-        score: gameState.score > 0 ? gameState.score - 1 : 0,
+        score: newScore,
       }
+    }
+
+    case 'DECREMENT_SCORE': {
+      const newScore = gameState.score > 0 ? gameState.score - 1 : 0
+      localStorage.setItem('score', newScore)
+      return {
+        ...gameState,
+        score: newScore,
+      }
+    }
   }
 }
