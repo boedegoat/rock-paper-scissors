@@ -15,7 +15,7 @@ const App = () => {
           <GameBoard />
           <button
             onClick={() => setShowRules(true)}
-            className='uppercase tracking-wider py-2 px-10 border-2 rounded-md text-xs text-gray-300 border-gray-300 md:absolute md:bottom-4 md:right-4'
+            className='uppercase tracking-wider py-2 px-10 border-2 rounded-md text-xs text-gray-300 border-gray-300 md:absolute md:bottom-4 md:right-4 transition transform md:hover:-translate-y-2'
           >
             rules
           </button>

@@ -7,7 +7,7 @@ const ResultDisplay = ({ result, resetGame, className }) => {
         {result === 'draw' ? 'draw' : `you ${result}`}
       </h1>
       <button
-        className='uppercase bg-white text-neutral-dark w-full py-2 tracking-widest mt-4 rounded-md text-sm'
+        className='uppercase bg-white text-neutral-dark w-full py-2 tracking-widest mt-4 rounded-md text-sm hover:text-red-400'
         onClick={resetGame}
       >
         play again

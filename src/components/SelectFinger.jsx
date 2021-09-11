@@ -32,7 +32,7 @@ const SelectFinger = ({ finger, className, ...props }) => {
       : 'bg-transparent'
 
   return (
-    <div className={`p-4 rounded-full w-max ${bg} ${className}`} {...props}>
+    <div className={`p-3 md:p-4 rounded-full w-max ${bg} ${className}`} {...props}>
       <div
         className={`
           ${finger ? 'bg-white' : 'bg-neutral-dark'}

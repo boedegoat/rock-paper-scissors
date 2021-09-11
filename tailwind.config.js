@@ -13,7 +13,7 @@ module.exports = {
         neutral: {
           dark: 'hsl(229, 25%, 31%)',
           score: 'hsl(229, 64%, 46%)',
-          header: ' hsl(217, 16%, 45%)',
+          header: 'hsl(217, 16%, 45%)',
         },
       },
       backgroundImage: {
@@ -21,6 +21,11 @@ module.exports = {
         scissors: 'linear-gradient(hsl(39, 89%, 49%),hsl(40, 84%, 53%))',
         paper: 'linear-gradient(hsl(230, 89%, 62%),hsl(230, 89%, 65%))',
         rock: 'linear-gradient(hsl(349, 71%, 52%),hsl(349, 70%, 56%))',
+      },
+      boxShadow: {
+        shading: `0 0 0 20px rgba(96, 110, 133,0.2), 
+                  0 0 0 50px rgba(96, 110, 133,0.1),
+                  0 0 0 70px rgba(96, 110, 133,0.05)`,
       },
     },
   },
