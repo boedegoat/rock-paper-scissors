@@ -35,12 +35,13 @@ const SelectFinger = ({ finger, className, ...props }) => {
     <div className={`p-3 rounded-full w-max ${bg} ${className}`} {...props}>
       <div
         className={`
-      ${finger ? 'bg-white' : 'bg-neutral-dark'}
-       p-3 rounded-full w-20 h-20 flex items-center 
-       ${finger && 'border-t-4 border-gray-300'}
-       justify-center`}
+          ${finger ? 'bg-white' : 'bg-neutral-dark'}
+          p-3 rounded-full w-20 h-20 md:w-32 md:h-32 flex items-center 
+          ${finger && 'border-t-4 border-gray-300'}
+          justify-center
+        `}
       >
-        <img src={Icon} alt={alt} className='w-10' />
+        <img src={Icon} alt={alt} className='w-10 md:w-14' />
       </div>
     </div>
   )

@@ -65,23 +65,23 @@ const GameBoard = () => {
   if (!userFinger) {
     return (
       <div className='relative'>
-        <div className='transform scale-[0.6]'>
+        <div className='transform scale-[0.6] md:scale-[0.8]'>
           <img src={Triangle} alt='triangle' />
         </div>
         <SelectFinger
           finger='paper'
           onClick={() => setUserFinger('paper')}
-          className='cursor-pointer absolute top-0 left-0'
+          className='cursor-pointer absolute top-0 left-0 md:-top-8 md:-left-8'
         />
         <SelectFinger
           finger='scissors'
           onClick={() => setUserFinger('scissors')}
-          className='cursor-pointer absolute top-0 right-0'
+          className='cursor-pointer absolute top-0 right-0 md:-top-8 md:-right-8'
         />
         <SelectFinger
           finger='rock'
           onClick={() => setUserFinger('rock')}
-          className='cursor-pointer absolute bottom-0 left-1/2 transform -translate-x-1/2'
+          className='cursor-pointer absolute bottom-0 md:-bottom-8 left-1/2 transform -translate-x-1/2'
         />
       </div>
     )
